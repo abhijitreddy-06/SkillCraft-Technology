@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h2>To Do List</h2>
+        <input type="text" class="searchbar" placeholder="Add tasks...">
+        <div class="time-container">
+            <input type="time" class="time">
+            <button class="time-btn" onclick="openTimePicker()">🕒</button>
+        </div>
+        <button class="done_button enter_button done-btn">✔️</button>
+        <div class="task-list">
+        </div>
+    </div>
+    <button id="dark-mode-toggle"
+        style="position: fixed; bottom: 20px; right: 20px; padding: 10px; border-radius: 50%; background: #333; color: white; border: none; cursor: pointer;">
+        🌙
+    </button>
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            darkModeToggle.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
